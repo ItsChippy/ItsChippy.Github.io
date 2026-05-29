@@ -23,6 +23,7 @@
     color: var(--text);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
   }
 
   header {
@@ -66,17 +67,27 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
-  .featured-card {
+.featured-card {
   display: block;
   background: var(--card);
-  padding: 1rem;
-  margin: 1rem 0;
+  padding: 1.2rem;
   border-radius: 12px;
-  transition: transform 0.2s ease;
+  text-decoration: none;
+  color: var(--text-strong);
+  transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
+  border: 1px solid transparent;
 }
 
 .featured-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  background: #373f4a;
+  border-color: var(--link);
+}
+
+.best-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
 }
 </style>
 </head>
@@ -102,8 +113,10 @@
 <section>
   <h2>Best Projects</h2>
 
+<div class ="best-projects-grid">
+  
   <a class="featured-card" href="#meadow">
-    <h3>"Mellanrum", Virtual art museum collaborated with Meadow.</h3>
+    <h3>"Mellanrum", Virtual AR Art Exhibition (Meadow collaboration).</h3>
   </a>
 
   <a class="featured-card" href="#wfc">
