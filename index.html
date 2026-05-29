@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logan Duffy – Portfolio</title>
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
   :root {
     --bg: #22272e;        /* bakgrund */
     --card: #2d333b;       /* kort (projekt) */
@@ -62,6 +65,19 @@
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   }
+
+  .featured-card {
+  display: block;
+  background: var(--card);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-3px);
+}
 </style>
 </head>
 <body>
@@ -72,9 +88,37 @@
   <main>
     <section>
       <h2>About Me</h2>
-      <p>Currently a third year computer science student at Malmö University. Worked in Unity and Unreal Engine. Always striving to learn more and become a better coder.</p>
+      <p>Currently a third year computer science student at Malmö University focused on gameplay programming, procedural generation, and interactive systems development using C# and C++</p>
     </section>
 
+    <section>
+  <h2>Tech Stack</h2>
+  <p>
+    C#, C++, Unity, Unreal Engine,
+    SQL, Git, Visual Studio
+  </p>
+</section>
+
+<section>
+  <h2>Best Projects</h2>
+
+  <a<div class="featured-card">
+    <h3>href="#meadow">"Mellanrum", Virtual art museum collaborated with Meadow.</h3>
+  </div></a>
+  
+  <a<div class="featured-card">
+    <h3>href="#wfc">Wave Function Collapse</h3>
+  </div></a>
+
+  <a<div class="featured-card">
+    <h3>href="#msm">Middle School Mayhem, a sandbox prank simulator</h3>
+  </div></a>
+
+  <a<div class="featured-card">
+    <h3>href="#sod">Skull of Duty, 3D dungeon crawler</h3>
+  </div></a>
+</section>
+    
     <section>
       <h2>Notable Projects 1st year</h2>
 
@@ -86,7 +130,7 @@
 
       <div class="project">
         <h3>Project 2: Donkey Kong (C#)</h3>
-        <p>Donkey Kong, developed in Monogame. Learned about singletons</p>
+        <p>Donkey Kong, developed in Monogame.</p>
         <a href="https://github.com/ItsChippy/DonkeyKong">Show in GitHub</a>
       </div>
       
@@ -102,7 +146,7 @@
         <a href="https://github.com/WilliamFriis1/SQLProj">Show in GitHub</a>
       </div>
 
-        <div class="project">
+        <div class="project" id="sod">
         <h3>Project 5: Skull of Duty (C#)</h3>
         <p>First large group project, first person dungeon crawler developed in Unity. My Responsibility was primarily enemy AI, version control and "technical support".</p>
         <a href="https://github.com/WilliamFriis1/DungeonGame">Show in GitHub</a> <br>
@@ -123,7 +167,7 @@
     <section>
       <h2>Notable Projects 3rd year </h2>
 
-        <div class="project">
+        <div class="project" id="wfc">
         <h3>Project 1: Wave Function Collapse (C#)</h3>
         <p>Procedural 2D map generator using Wave Function Collapse. Developed in Unity.</p>
         <a href="https://github.com/ItsChippy/WFC">Show in GitHub →</a>
@@ -135,7 +179,7 @@
         <a href="https://github.com/ItsChippy/l-system">Show in GitHub</a>
       </div>
 
-        <div class="project">
+        <div class="project" id="msm">
         <h3>Project 3: Middle School Mayhem (C#)</h3>
         <p>Large group project developed in Unity. Multiplayer isometric sandbox game. Primary responsibilities were HUD design.</p>
         <a href="https://github.com/Oxenryd/Mayhem">Show in GitHub</a> <br>
@@ -146,7 +190,7 @@
 
     <section>
       <h2>Consult Projects</h2>
-      <div class="project">
+      <div class="project" id="meadow">
         <h3>"Mellanrum | Exhibition"</h3>
         <p>In collaboration with Meadow, I helped develop this virtual AR art exhibition partnered with schools from the area.</p>
         <a href="https://app.meadow.space/x/-OszA7Hp1eL5fDfYP1Fm">Exhibition homepage</a><br>
