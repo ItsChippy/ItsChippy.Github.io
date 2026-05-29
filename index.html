@@ -4,68 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logan Duffy – Portfolio</title>
+
 <style>
-  html {
-    scroll-behavior: smooth;
-  }
-  :root {
-    --bg: #22272e;        /* bakgrund */
-    --card: #2d333b;       /* kort (projekt) */
-    --text: #adbac7;       /* vanlig text */
-    --text-strong: #cdd9e5; /* rubriker */
-    --link: #539bf5;       /* länkar */
-    --link-hover: #6cb6ff;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-  }
+:root {
+  --bg: #22272e;
+  --card: #2d333b;
+  --text: #adbac7;
+  --text-strong: #cdd9e5;
+  --link: #539bf5;
+  --link-hover: #6cb6ff;
+}
 
-  header {
-    background: #1c2128;
-    color: var(--text-strong);
-    text-align: center;
-    padding: 3rem 1rem;
-  }
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
 
-  h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    color: var(--text-strong);
-  }
+/* HERO */
+.hero {
+  background: radial-gradient(circle at top, #2d333b, #1c2128);
+  padding: 5rem 1rem;
+  text-align: center;
+}
 
-  h2 {
-    color: var(--text-strong);
-    margin-top: 2rem;
-  }
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  main {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
-  }
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-strong);
+}
 
-  a {
-    color: var(--link);
-    text-decoration: none;
-  }
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--link);
+  margin-bottom: 1rem;
+}
 
-  a:hover {
-    color: var(--link-hover);
-  }
+.hero-text {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: var(--text);
+}
 
-  .project {
-    background: var(--card);
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  }
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--link);
+  text-decoration: none;
+  color: var(--text-strong);
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--link);
+  color: #0b0f14;
+}
+
+.btn.primary {
+  background: var(--link);
+  color: #0b0f14;
+  font-weight: bold;
+}
+
+/* MAIN LAYOUT */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+h2 {
+  color: var(--text-strong);
+  margin-top: 2rem;
+}
+
+/* BEST PROJECTS GRID */
+.best-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
 .featured-card {
   display: block;
@@ -74,8 +112,8 @@
   border-radius: 12px;
   text-decoration: none;
   color: var(--text-strong);
-  transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
   border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
 }
 
 .featured-card:hover {
@@ -84,131 +122,157 @@
   border-color: var(--link);
 }
 
-.best-projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+/* PROJECT CARDS */
+.project {
+  background: var(--card);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
 }
 </style>
 </head>
-<body>
-  <header>
-    <h1>Logan Duffy</h1>
-    <p>Programmer – C++, C# (Moderate experience in Java - Beginner experience in Python)</p>
-  </header>
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Currently a third year computer science student at Malmö University focused on gameplay programming, procedural generation, and interactive systems development using C# and C++</p>
-    </section>
 
-    <section>
-  <h2>Tech Stack</h2>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Logan Duffy</h1>
+
+    <p class="subtitle">
+      Gameplay Programmer · C# / C++ · Unity & Unreal Engine
+    </p>
+
+    <p class="hero-text">
+      Computer Science student focused on gameplay systems, procedural generation,
+      and interactive game development.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#best" class="btn primary">View Projects</a>
+      <a href="https://github.com/ItsChippy" class="btn">GitHub</a>
+      <a href="mailto:your@email.com" class="btn">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>About Me</h2>
   <p>
-    C#, C++, Unity, Unreal Engine,
-    SQL, Git, Visual Studio
+    Currently a third year computer science student at Malmö University focused on gameplay programming,
+    procedural generation, and interactive systems development using C# and C++.
   </p>
 </section>
 
 <section>
+  <h2>Tech Stack</h2>
+  <p>C#, C++, Unity, Unreal Engine, SQL, Git, Visual Studio</p>
+</section>
+
+<!-- BEST PROJECTS -->
+<section id="best">
   <h2>Best Projects</h2>
 
-<div class ="best-projects-grid">
-  
-  <a class="featured-card" href="#meadow">
-    <h3>"Mellanrum", Virtual AR Art Exhibition (Meadow collaboration).</h3>
-  </a>
+  <div class="best-projects-grid">
 
-  <a class="featured-card" href="#wfc">
-    <h3>Wave Function Collapse</h3>
-  </a>
+    <a class="featured-card" href="#meadow">
+      <h3>Mellanrum – Virtual AR Art Exhibition</h3>
+    </a>
 
-  <a class="featured-card" href="#msm">
-    <h3>Middle School Mayhem, a sandbox prank simulator</h3>
-  </a>
+    <a class="featured-card" href="#wfc">
+      <h3>Wave Function Collapse</h3>
+    </a>
 
-  <a class="featured-card" href="#sod">
-    <h3>Skull of Duty, 3D dungeon crawler</h3>
-  </a>
+    <a class="featured-card" href="#msm">
+      <h3>Middle School Mayhem</h3>
+    </a>
+
+    <a class="featured-card" href="#sod">
+      <h3>Skull of Duty</h3>
+    </a>
+
+  </div>
 </section>
-    
-    <section>
-      <h2>Notable Projects 1st year</h2>
 
-      <div class="project">
-        <h3>Project 1: Breakout Game (C#)</h3>
-        <p>Classic game Breakout, developed in Monogame</p>
-        <a href="https://github.com/ItsChippy/Breakout-game">Show in GitHub</a>
-      </div>
+<!-- PROJECTS -->
+<section>
+  <h2>Notable Projects 1st year</h2>
 
-      <div class="project">
-        <h3>Project 2: Donkey Kong (C#)</h3>
-        <p>Donkey Kong, developed in Monogame.</p>
-        <a href="https://github.com/ItsChippy/DonkeyKong">Show in GitHub</a>
-      </div>
-      
-        <div class="project">
-        <h3>Project 3: Tower Defense (C#)</h3>
-        <p>Space themed tower defense. Developed in Monogame</p>
-        <a href="https://github.com/ItsChippy/TowerDefense">Show in GitHub</a>
-      </div>
+  <div class="project">
+    <h3>Breakout Game</h3>
+    <p>Classic game Breakout, developed in MonoGame</p>
+  </div>
 
-        <div class="project">
-        <h3>Project 4: Hospital Database (C#/SQL)</h3>
-        <p>Hospital database, developed as part of a group assignment</p>
-        <a href="https://github.com/WilliamFriis1/SQLProj">Show in GitHub</a>
-      </div>
+  <div class="project">
+    <h3>Donkey Kong</h3>
+    <p>Recreation in MonoGame</p>
+  </div>
 
-        <div class="project" id="sod">
-        <h3>Project 5: Skull of Duty (C#)</h3>
-        <p>First large group project, first person dungeon crawler developed in Unity. My Responsibility was primarily enemy AI, version control and "technical support".</p>
-        <a href="https://github.com/WilliamFriis1/DungeonGame">Show in GitHub</a> <br>
-        <a href="https://youtu.be/YthlFtAKFEo">Trailer (made by me)</a>
-      </div>
-    </section>
+  <div class="project">
+    <h3>Tower Defense</h3>
+    <p>Space themed tower defense game in MonoGame</p>
+  </div>
 
-    <section>
-      <h2>Notable Projects 2nd year</h2>
+  <div class="project">
+    <h3>Hospital Database (SQL)</h3>
+    <p>Group assignment database system</p>
+  </div>
 
-        <div class="project">
-        <h3>Project 1: Unreal Engine game (C++/Blueprinting)</h3>
-        <p>Small third person zombie horde shooter game. Developed in Unreal Engine.</p>
-        <a href="https://github.com/ItsChippy/UnrealProject">Show in GitHub</a>
-      </div>
-    </section>
+  <div class="project" id="sod">
+    <h3>Skull of Duty</h3>
+    <p>First-person dungeon crawler in Unity</p>
+  </div>
+</section>
 
-    <section>
-      <h2>Notable Projects 3rd year </h2>
+<section>
+  <h2>Notable Projects 2nd year</h2>
 
-        <div class="project" id="wfc">
-        <h3>Project 1: Wave Function Collapse (C#)</h3>
-        <p>Procedural 2D map generator using Wave Function Collapse. Developed in Unity.</p>
-        <a href="https://github.com/ItsChippy/WFC">Show in GitHub →</a>
-      </div>
+  <div class="project">
+    <h3>Unreal Engine Zombie Shooter</h3>
+    <p>C++ + Blueprint third-person shooter</p>
+  </div>
+</section>
 
-        <div class="project">
-        <h3>Project 2: L-system (C#)</h3>
-        <p>Basic L-system developed in Unity.</p>
-        <a href="https://github.com/ItsChippy/l-system">Show in GitHub</a>
-      </div>
+<section>
+  <h2>Notable Projects 3rd year</h2>
 
-        <div class="project" id="msm">
-        <h3>Project 3: Middle School Mayhem (C#)</h3>
-        <p>Large group project developed in Unity. Multiplayer isometric sandbox game. Primary responsibilities were HUD design.</p>
-        <a href="https://github.com/Oxenryd/Mayhem">Show in GitHub</a> <br>
-        <a href="https://youtu.be/dcSh-dICKHs">Demo video (early version) Made by me</a> <br>
-        <a href="https://www.youtube.com/watch?v=dkFGjs2AMZM">Trailer video Made by me</a>
-      </div>
-    </section>
+  <div class="project" id="wfc">
+    <h3>Wave Function Collapse</h3>
+    <p>Procedural generation system in Unity</p>
+  </div>
 
-    <section>
-      <h2>Consult Projects</h2>
-      <div class="project" id="meadow">
-        <h3>"Mellanrum | Exhibition"</h3>
-        <p>In collaboration with Meadow, I helped develop this virtual AR art exhibition partnered with schools from the area.</p>
-        <a href="https://app.meadow.space/x/-OszA7Hp1eL5fDfYP1Fm">Exhibition homepage</a><br>
-      </div>
-    </section>
-  </main>
+  <div class="project">
+    <h3>L-System Generator</h3>
+    <p>Procedural structure generation in Unity</p>
+  </div>
+
+  <div class="project" id="msm">
+    <h3>Middle School Mayhem</h3>
+    <p>Multiplayer sandbox game, HUD + systems work</p>
+  </div>
+</section>
+
+<section>
+  <h2>Consult Projects</h2>
+
+  <div class="project" id="meadow">
+    <h3>Mellanrum | Exhibition</h3>
+    <p>AR virtual art museum collaboration with Meadow</p>
+  </div>
+</section>
+
+</main>
 </body>
 </html>
